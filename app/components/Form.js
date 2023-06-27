@@ -16,12 +16,20 @@ const Form = () => {
         });
     };
 
+    const savetoLocalStorage = (data) => {
+        const date = new Date().toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" })
+        const oldData = (localStorage.getItem('bmi')) || "";
+        const newData = oldData + "[" + data.height + ":" + data.weight + ";" + date + "],"
+        localStorage.setItem('bmi', newData);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const validationErrors = validateForm(formData);
         setErrors(validationErrors);
 
         if (Object.keys(validationErrors).length === 0) {
+            savetoLocalStorage(formData)
             setFormData({
                 height: '',
                 weight: '',
