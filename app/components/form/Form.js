@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import Input from "@/app/components/Input";
+import Input from "@/app/components/form/Input";
+import {useRouter} from "next/navigation";
 
 const Form = () => {
     const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const Form = () => {
         weight: '',
     });
     const [errors, setErrors] = useState({});
+    const router=useRouter()
 
     const handleChange = (e) => {
         setFormData({
@@ -19,7 +21,7 @@ const Form = () => {
     const savetoLocalStorage = (data) => {
         const date = new Date().toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" })
         const oldData = (localStorage.getItem('bmi')) || "";
-        const newData = oldData + "[" + data.height + ":" + data.weight + ";" + date + "],"
+        const newData =  "[" + data.height + ";" + data.weight + ";" + date + "]," + oldData;
         localStorage.setItem('bmi', newData);
     }
 
@@ -36,6 +38,7 @@ const Form = () => {
             });
             setErrors({});
         }
+        router.refresh()
     };
 
     const validateForm = (data) => {

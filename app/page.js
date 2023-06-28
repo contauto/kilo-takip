@@ -1,5 +1,6 @@
-import Section from "@/app/components/Section";
-import Form from "@/app/components/Form";
+import Section from "@/app/components/layout/Section";
+import Form from "@/app/components/form/Form";
+import InfoHolder from "@/app/components/info/InfoHolder";
 
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
            <Form/>
        </Section>
      <Section bg="bg-cyan-400">
-         <h1 className="text-2xl">Hello World</h1>
+         <InfoHolder/>
         </Section>
        <Section bg="bg-fuchsia-400">
            <h1 className="text-2xl">Hello World</h1>
