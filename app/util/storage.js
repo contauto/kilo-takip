@@ -1,14 +1,20 @@
 import bmi from "@/app/util/bmi";
+import {useEffect, useState} from "react";
 
 export default function storage(key) {
-    const data = localStorage.getItem(key);
+    const [storageData, setStorageData] = useState();
     const allHeights = [];
     const allWeights = [];
     const allDates = [];
     const allBmis = [];
 
-    if (data) {
-        const cleanedData = data.replace(/\[|\]/g, '');
+    useEffect(() => {
+        setStorageData(localStorage.getItem(key));
+    }, []);
+
+
+    if (storageData) {
+        const cleanedData = storageData.replace(/\[|\]/g, '');
         const dataArray = cleanedData.slice(0, -1).split(',');
 
         for (const item of dataArray) {
@@ -23,6 +29,5 @@ export default function storage(key) {
             allBmis.push(bmi(cleanHeight, cleanWeight));
         }
     }
-    console.log(allHeights, allWeights, allDates, allBmis)
     return {allHeights, allWeights, allDates, allBmis};
 }

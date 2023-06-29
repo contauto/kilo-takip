@@ -6,7 +6,6 @@ function Difference({height, weight, date, bmi}) {
     const isDifference = height.length > 1;
     const [differences, setDifferences] = useState({});
 
-
     useEffect(() => {
         if (isDifference) {
             setDifferences({
@@ -16,7 +15,7 @@ function Difference({height, weight, date, bmi}) {
                 date: dateUtil(date[0], date[1]),
             })
         }
-    }, []);
+    }, [height]);
 
     return (
         <div>
