@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import classNames from "classnames";
-import dateUtil from "@/app/util/dateUtil";
+import dateUtil from "@/util/dateUtil";
 
 function Difference({height, weight, date, bmi}) {
     const isDifference = height.length > 1;

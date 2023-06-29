@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from 'react';
-import Input from "@/app/components/form/Input";
+import { useState } from 'react';
+import Input from "@/components/form/Input";
 import {useRouter} from "next/navigation";
 
 const Form = () => {

@@ -1,4 +1,4 @@
-import bmi from "@/app/util/bmi";
+import bmi from "@/util/bmi";
 import {useEffect, useState} from "react";
 
 export default function storage(key) {
