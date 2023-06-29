@@ -1,7 +1,7 @@
 import bmi from "@/app/util/bmi";
 
 export default function storage(key) {
-    const storage = window.localStorage;
+    const storage = window?window.localStorage:null;
     const data = storage.getItem(key);
     const allHeights = [];
     const allWeights = [];
