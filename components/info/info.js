@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Info({height, weight, date, bmi}) {
     return (
         <div>

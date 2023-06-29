@@ -1,6 +1,6 @@
-import Section from "@/app/components/layout/Section";
-import Form from "@/app/components/form/Form";
-import InfoHolder from "@/app/components/info/InfoHolder";
+import Section from "@/components/layout/Section";
+import Form from "@/components/form/Form";
+import InfoHolder from "@/components/info/InfoHolder";
 
 
 export default function Home() {
