@@ -1,6 +1,7 @@
 import Section from "@/components/layout/Section";
 import Form from "@/components/form/Form";
 import InfoHolder from "@/components/info/InfoHolder";
+import Charts from "@/components/graph/charts";
 
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
          <InfoHolder/>
         </Section>
        <Section bg="bg-fuchsia-400">
-           <h1 className="text-2xl">Hello World</h1>
+           <Charts/>
        </Section>
         <Section bg="bg-rose-400">
             <h1 className="text-2xl">Hello World</h1>
